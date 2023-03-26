@@ -1,0 +1,43 @@
+Metadata-Version: 2.0
+Name: RUST
+Version: 0.1.1
+Summary: Ribo-Seq Unit Step Transformation
+Home-page: http://ribogalaxy.ucc.ie
+Author: Patrick O'Connor
+Author-email: patrickoconnor215@gmail.com
+License: GPL
+Keywords: rust ribo-seq ribosome profiling
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Scientific/Engineering :: Bio-Informatics
+Classifier: License :: OSI Approved :: GNU General Public License (GPL)
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.6
+Classifier: Programming Language :: Python :: 2.7
+Requires-Dist: biopython
+Requires-Dist: matplotlib
+Requires-Dist: mock (<=1.0.1)
+Requires-Dist: pysam
+
+RUST - Ribo-seq Unit Step Transformation
+========================================
+This tool is designed for ribo-seq data and produces a metafootprint profile
+that reveals the influence of mRNA features such as codons/amino acids on
+the relative read density in the sample across the entire ribosome and nascent
+peptide region. The Kullback-Leibler divergence across these sites is also provided.
+
+An online version is available on `RiboGalaxy <http://ribogalaxy.ucc.ie>`_.
+
+Author: Patrick O'Connor
+
+**Citation**
+
+Surveying the relative impact of mRNA features on local ribosome profiling read density in 28 datasets.
+
+Patrick O'Connor, Dmitry Andreev, Pavel Baranov
+
+bioRxiv doi: http://dx.doi.org/10.1101/018762
+
+
+

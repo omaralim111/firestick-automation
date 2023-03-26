@@ -1,0 +1,9 @@
+cryptography
+pyasn1
+rsa
+
+[async]
+aiofiles>=0.4.0
+
+[usb]
+libusb1>=1.0.16

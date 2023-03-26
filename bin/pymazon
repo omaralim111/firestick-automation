@@ -1,0 +1,70 @@
+#!/home/pi/Projects/fire/fire/bin/python3
+"""
+Pymazon - A Python based downloader for the Amazon.com MP3 store
+Copyright (c) 2010 Steven C. Colbert
+
+This program is free software: you can redistribute it and/or
+modify it under the terms of the GNU General Public License as
+published by the Free Software Foundation, either version 3 of the
+License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+"""
+
+import os
+import sys
+
+from pymazon.core.options import parse_options
+from pymazon.core.settings import settings
+from pymazon.util.log_util import PymazonLogger
+
+
+logger = PymazonLogger('main')
+    
+
+def main():    
+    entry, amzs = parse_options()   
+    if entry == 'cmd':
+        if not amzs:            
+            raise ValueError('No .amz files specified.')
+        from pymazon.cmd.ui import main
+        main(amzs)
+    elif entry == 'qt4':
+        try:
+            from pymazon.qt.ui import main
+            main(amzs)
+        except ImportError, e:
+            logger.error(e)
+            msg = ('Unable to import PyQt4. You can still use Pymazon '
+                   'via the commmand line with the -c switch. '
+                   'Type `pymazon --help` for more info.')
+            raise ImportError(msg)
+    elif entry == 'gtk':
+        try:
+            from pymazon.gtk.ui import main
+            main(amzs)
+        except ImportError, e:
+            logger.error(e)
+            msg = ('Unable to import PyGtk. You can still use Pymazon '
+                   'via the commmand line with the -c switch. '
+                   'Type `pymazon --help` for more info.')
+            raise ImportError(msg)
+    else:
+        msg = ('Invalid backend specified. Pymazon can be used from '
+               'the command line, pyqt4, or pygtk. '
+               'Type `pymazon --help` for more info.')
+        raise ValueError(msg)
+        
+        
+if __name__=='__main__':
+    try:
+        main()
+    finally:
+        logger.shutdown()
+        

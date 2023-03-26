@@ -1,0 +1,3 @@
+[console_scripts]
+keygen = keygen.keygen:main
+
