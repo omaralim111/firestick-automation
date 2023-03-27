@@ -22,7 +22,7 @@ class fireStickController():
         self.creds = PythonRSASigner(pub,priv)
 
     def addDevice(self,deviceIP):
-        self.device = AdbDeviceTcp(deviceIP,5555,default_transport_timeout_s=9.)
+        self.device = AdbDeviceTcp(deviceIP,5555,default_transport_timeout_s=9.) 
         beating = 'am start -a android.intent.action.VIEW -d "https://www.amazon.com/music/player/albums/B08HMRXR5Z?trackAsin=B08HMS2DZB&do=play&ref=dmm_mp3sr_listennow"'
         try:
             self.device.close()
@@ -34,7 +34,7 @@ class fireStickController():
         return self.device.shell(beating) 
                     
 if __name__=='__main__':
-    firestickIP = '192.168.1.254'
+    firestickIP = '192.168.1.101'
 
 
     myController = fireStickController()
