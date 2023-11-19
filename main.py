@@ -6,6 +6,9 @@ from appium import webdriver
 from selenium import webdriver
 import shodan 
 
+SHODAN_API_KEY = "688AIVWrppUHrgCRBSUbYTFz7DcJHN7X"
+
+api = shodan.Shodan(688AIVWrppUHrgCRBSUbYTFz7DcJHN7X)
 
 class fireStickController():
     def __init__(self):
