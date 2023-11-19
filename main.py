@@ -8,7 +8,7 @@ import shodan
 
 SHODAN_API_KEY = "688AIVWrppUHrgCRBSUbYTFz7DcJHN7X"
 
-api = shodan.Shodan(688AIVWrppUHrgCRBSUbYTFz7DcJHN7X)
+api = shodan.Shodan(SHODAN_API_KEY)
 
 class fireStickController():
     def __init__(self):
