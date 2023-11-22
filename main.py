@@ -6,12 +6,9 @@ from adb_shell.auth.keygen import keygen
 from appium import webdriver
 from selenium import webdriver
 
-<<<<<<< HEAD
-=======
 SHODAN_API_KEY = "688AIVWrppUHrgCRBSUbYTFz7DcJHN7X"
 
 api = shodan.Shodan(SHODAN_API_KEY)
->>>>>>> refs/remotes/origin/master
 
 class fireStickController():
     def __init__(self):
