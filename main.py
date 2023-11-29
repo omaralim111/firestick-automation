@@ -1,4 +1,5 @@
-import os 
+import os
+import sys
 import shodan
 from adb_shell.adb_device import AdbDeviceTcp
 from adb_shell.auth.sign_pythonrsa import PythonRSASigner
