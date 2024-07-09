@@ -34,7 +34,6 @@ output = int(input("print to screen[1] or run scripting [2]\n"))
 if output==1:
     for val in myFind:
         print(val)
-        
 elif output==2:
     for val in myFind:
         myout(val)
