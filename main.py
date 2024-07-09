@@ -11,6 +11,35 @@ SHODAN_API_KEY = "688AIVWrppUHrgCRBSUbYTFz7DcJHN7X"
 
 api = shodan.Shodan(SHODAN_API_KEY)
 
+def myOut(received):
+    f=open("output.txt","a+")
+    f.write(received)
+    f.write("\n")
+    f.close()
+    
+item = input("search\n")
+myFind = []
+try:
+    results = api.search(item)
+    print("total matches = {}".format(results['total']))
+    for result in results['matches']:
+        
+        myFind.append(str(result['ip_str']))
+        
+except:
+    print("error")
+    
+output = int(input("print to screen[1] or save to file [2]\n"))
+if output==1:
+    for val in myFind:
+        print(val)
+        
+elif output==2:
+    for val in myFind:
+        myOut(val)
+else:
+    print("wrong number")
+
 class fireStickController():
     def __init__(self):
         if not os.path.isfile('adbkey'):
@@ -38,7 +67,7 @@ class fireStickController():
         return self.device.shell(beating) 
                     
 if __name__=='__main__':
-    firestickIP = '24.12.214.105'
+    firestickIP = '108.202.101.63'
 
     myController = fireStickController() 
     myController.addDevice(firestickIP)
