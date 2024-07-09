@@ -24,7 +24,7 @@ try:
     print("total matches = {}".format(results['total']))
     for result in results['matches']:
         
-        myFind.append(str(result['ip']))
+        myFind.append(str(result['ip_str']))
         
 except:
     print("error")
