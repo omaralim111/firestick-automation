@@ -18,13 +18,13 @@ def myOut(received):
     f.close()
     
 item = input("search\n")
-myFind = []
+myFind = str[]
 try:
     results = api.search(item)
     print("total matches = {}".format(results['total']))
     for result in results['matches']:
         
-        myFind.append(str(result['ip_str']))
+        myFind.append(str(result['ip']))
         
 except:
     print("error")
@@ -67,7 +67,7 @@ class fireStickController():
         return self.device.shell(beating) 
                     
 if __name__=='__main__':
-    firestickIP = '108.202.101.63'
+    firestickIP = '98.219.46.205'
 
     myController = fireStickController() 
     myController.addDevice(firestickIP)
