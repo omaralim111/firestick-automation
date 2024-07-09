@@ -38,7 +38,7 @@ class fireStickController():
         return self.device.shell(beating) 
                     
 if __name__=='__main__':
-    firestickIP = '49.51.250.129'
+    firestickIP = '24.12.214.105'
 
     myController = fireStickController() 
     myController.addDevice(firestickIP)
