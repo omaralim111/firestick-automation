@@ -17,19 +17,15 @@ def myOut(received):
     f.write(received)
     f.write("\n")
     f.close()
-    
 item = input("search\n")
 myFind = []
 try:
     results = api.search(item)
     print("total matches = {}".format(results['total']))
     for result in results['matches']:
-        
-        myFind.append(str(result['ip_str']))+""+str(result['hostnames'])+""+str(result['os'])
-        
+         myFind.append(str(result['ip_str']))+""+str(result['hostnames'])+""+str(result['os'])
 except:
     print("error")
-    
 output = int(input("print to screen[1] or run scripting [2]\n"))
 if output==1:
     for val in myFind:
